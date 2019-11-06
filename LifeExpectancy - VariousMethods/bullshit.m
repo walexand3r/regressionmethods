@@ -1,0 +1,11 @@
+LEXP = DATA1(:,1);
+WTRA = DATA1(:,2);
+SANI = DATA1(:,3);
+CO2 = DATA1(:,4);
+CMORT = DATA1(:,5);
+EMPL = DATA1(:,6);
+INCM = DATA1(:,7);
+HDI = DATA1(:,8);
+GDP = DATA1(:,9);
+INTU = DATA1(:,10);
+POP = DATA1(:,11);
