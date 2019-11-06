@@ -1,0 +1,26 @@
+function	[train_X, train_y] = generate_train_data(n_train)
+	%n_train = 100;
+    
+	mu_1 = 0.8; sigma_1 = 0.2;
+	mu_21 = 0.6; sigma_21 = 0.2;
+	mu_22 = 0.4; sigma_22 = 0.2;
+	mu_3 = 0.2; sigma_3 = 0.2;
+
+	d = 20;
+
+	rng(0);
+
+	train_X = []; train_y = [];
+
+	train_X = [train_X; sigma_1*randn(floor(n_train/4),d)+mu_1];
+	train_y = [train_y; 0.7+0.3*rand(floor(n_train/4),1)];
+
+	train_X = [train_X; sigma_21*randn(floor(n_train/4),d)+mu_21];
+	train_y = [train_y; 0.6+0.1*rand(floor(n_train/4),1)];
+
+	train_X = [train_X; sigma_22*randn(floor(n_train/4),d)+mu_22];
+	train_y = [train_y; 0.5+0.1*rand(floor(n_train/4),1)];
+
+	n_rem = n_train - length(train_y);
+	train_X = [train_X; sigma_3*randn(n_rem,d)+mu_3];
+	train_y = [train_y; 0.4+0.1*rand(n_rem,1)];
